@@ -21,3 +21,16 @@ module.exports.detail = (req, res, next) => {
             next(e)
         })
 }
+
+module.exports.createCelebrity = (req, res, next) => {
+    res.render("celebrityForm")
+}
+
+module.exports.doCreateCelebrity = (req, res, next) => {
+    const newCelebrity = req.body;
+    console.log("CELEBRITYYYYYYYYYYYYYYYY: ", req.body)
+    Celebrity.create(newCelebrity)
+        .then(() => {
+            res.redirect("/celebrities")
+        })
+}
