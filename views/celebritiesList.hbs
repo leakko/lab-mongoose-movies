@@ -1,8 +1,9 @@
 <h1>Celebrities</h1>
 <ul>
     {{#each celebritiesArr as |celebrity|}}
-        <li>
+        <li style="margin-bottom: 10px;">
             <strong>Name: {{celebrity.name}}</strong> - Occupation: {{celebrity.occupation}}
+            <form action="/celebrities/{{celebrity.id}}"><button>More Info</button></form>
         </li>
     {{/each}}
 </ul>

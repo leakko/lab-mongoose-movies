@@ -10,3 +10,14 @@ module.exports.list = (req, res, next) => {
             next(e)
         })
 }
+
+module.exports.detail = (req, res, next) => {
+    const id = req.params.id
+    Celebrity.findById(id)
+        .then ((celebrity) => {
+            res.render("celebrityInfo", celebrity)
+        })
+        .catch((e) => {
+            next(e)
+        })
+}
